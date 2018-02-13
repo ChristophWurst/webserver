@@ -1,4 +1,4 @@
-FROM php:7.1-apache-stretch
+FROM php:7.1-apache-jessie
 WORKDIR /var/www/public
 COPY apache.conf /etc/apache2/sites-available/weinstein.conf
 RUN apt-get update && apt-get install -y --no-install-recommends \
