@@ -1,5 +1,5 @@
 FROM php:7.1.14-apache-jessie
-COPY apache.conf /etc/apache2/sites-available/wiwu.conf
+COPY apache.conf /etc/apache2/sites-available/weinstein.conf
 COPY ports.conf /etc/apache2/ports.conf
 RUN apt-get update && apt-get install -y --no-install-recommends \
     libmcrypt-dev \
@@ -7,7 +7,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     && docker-php-ext-install mcrypt pdo_mysql \
     && a2enmod rewrite \
     && a2dissite 000-default.conf \
-    && a2ensite wiwu.conf
+    && a2ensite weinstein.conf
 WORKDIR /var/www
 RUN chgrp -R 0 /var/run/apache2 \
     && chgrp -R 0 /var/lock/apache2 \
