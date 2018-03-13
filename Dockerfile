@@ -1,6 +1,7 @@
 FROM php:7.1.15-apache-jessie
 WORKDIR /var/www/public
 COPY apache.conf /etc/apache2/sites-available/weinstein.conf
+COPY php.ini /usr/local/etc/php/
 RUN apt-get update && apt-get install -y --no-install-recommends \
     libmcrypt-dev \
     mysql-client \
