@@ -1,4 +1,4 @@
-FROM php:7.1.25-apache-jessie
+FROM php:7.1.26-apache-jessie
 WORKDIR /var/www/public
 COPY apache.conf /etc/apache2/sites-available/weinstein.conf
 COPY php.ini /usr/local/etc/php/
