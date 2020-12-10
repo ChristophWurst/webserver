@@ -6,9 +6,10 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     libmcrypt-dev \
     mariadb-client \
     libzip-dev \
+    libpng-dev \
     zip \
     && docker-php-ext-configure zip \
-    && docker-php-ext-install pdo_mysql zip \
+    && docker-php-ext-install pdo_mysql zip gd \
     && a2enmod rewrite \
     && a2dissite 000-default.conf \
     && a2ensite weinstein.conf
