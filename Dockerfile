@@ -10,6 +10,9 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     zip \
     && docker-php-ext-configure zip \
     && docker-php-ext-install pdo_mysql zip gd \
+    && pecl install -o -f redis \
+    &&  rm -rf /tmp/pear \
+    &&  docker-php-ext-enable redis \
     && a2enmod rewrite \
     && a2dissite 000-default.conf \
     && a2ensite weinstein.conf
