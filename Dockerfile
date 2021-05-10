@@ -1,4 +1,4 @@
-FROM php:7.4-apache-buster
+FROM php:8.0.6-apache-buster
 WORKDIR /var/www/public
 COPY apache.conf /etc/apache2/sites-available/weinstein.conf
 COPY php.ini /usr/local/etc/php/
